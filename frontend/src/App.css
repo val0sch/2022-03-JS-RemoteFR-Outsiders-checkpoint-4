@@ -1,6 +1,6 @@
 :root {
   --color_1: #bc4749;
-  --color_2: #27292e;
+  --color_2: #4a4949;
   --color_3: #3d3d3d;
   --color_dark: #000000;
   --color_light: #ffffff;
@@ -48,9 +48,10 @@ code {
 }
 
 .section {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--color_3);
 }
 
 @keyframes App-logo-spin {

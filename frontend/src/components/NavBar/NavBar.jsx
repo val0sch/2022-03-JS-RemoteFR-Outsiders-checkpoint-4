@@ -7,17 +7,19 @@ function NavBar() {
   return (
     <div id="navbar">
       {" "}
-      <img src={logo} alt="tire-bouchon" />
-      <div id="links">
-        <Link to="/" className="hover navbar">
+      <Link to="/">
+        <img src={logo} alt="tire-bouchon" />
+      </Link>
+      <div id="links-nav">
+        <Link to="/inventaire" className="hover navbar">
           Mon inventaire
         </Link>
 
-        <Link to="/" className="hover navbar">
+        <Link to="/carte" className="hover navbar">
           Carte de France
         </Link>
 
-        <Link to="/" className="hover navbar">
+        <Link to="/gestion" className="hover navbar">
           Gérer ma cave
         </Link>
       </div>

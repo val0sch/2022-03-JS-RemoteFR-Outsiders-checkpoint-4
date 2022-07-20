@@ -1,0 +1,8 @@
+#footer p {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  background: var(--color_3);
+  color: var(--color_light);
+  height: 2vh;
+}

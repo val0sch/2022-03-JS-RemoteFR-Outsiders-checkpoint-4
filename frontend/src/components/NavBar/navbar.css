@@ -5,8 +5,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 10vh;
 }
-#links {
+#links-nav {
   display: flex;
   gap: 7rem;
   align-items: center;

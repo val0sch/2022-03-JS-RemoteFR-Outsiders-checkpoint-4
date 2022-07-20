@@ -1,13 +1,12 @@
 import React from "react";
-import "./home.css";
 import Layout from "@components/Layout";
 
-function Home() {
+function Beaujolais() {
   return (
     <Layout>
-      <div className="section home" />
+      <div>Beaujolais</div>
     </Layout>
   );
 }
 
-export default Home;
+export default Beaujolais;

@@ -1,13 +1,12 @@
 import React from "react";
-import "./home.css";
 import Layout from "@components/Layout";
 
-function Home() {
+function Bourgogne() {
   return (
     <Layout>
-      <div className="section home" />
+      <div>Bourgogne</div>
     </Layout>
   );
 }
 
-export default Home;
+export default Bourgogne;
