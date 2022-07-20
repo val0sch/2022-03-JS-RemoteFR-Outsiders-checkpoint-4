@@ -4,7 +4,7 @@ import Layout from "@components/Layout";
 function Bourgogne() {
   return (
     <Layout>
-      <div>Bourgogne</div>
+      <div className="section">Bourgogne</div>
     </Layout>
   );
 }

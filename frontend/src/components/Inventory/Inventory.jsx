@@ -10,16 +10,16 @@ function Inventory() {
       <div className="section">
         <div id="links-region">
           <img src={bouchon} id="bouchon" alt="bouchon" />
-          <Link to="inventaire/beaujolais" className="link-region">
+          <Link to="/beaujolais" className="link-region">
             Beaujolais
           </Link>
-          <Link to="inventaire/alsace" className="link-region">
+          <Link to="/alsace" className="link-region">
             Vin de la région Alsace
           </Link>
-          <Link to="inventaire/bordeaux" className="link-region">
+          <Link to="/bordeaux" className="link-region">
             Vin de la région Bordelaise
           </Link>
-          <Link to="inventaire/bourgogne" className="link-region">
+          <Link to="/bourgogne" className="link-region">
             Vin de la région Bourgogne
           </Link>
         </div>

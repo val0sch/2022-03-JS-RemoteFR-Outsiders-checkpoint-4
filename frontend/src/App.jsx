@@ -12,62 +12,13 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="section">
-              <WelcomePage />
-            </div>
-          }
-        />
-        <Route
-          path="/accueil"
-          element={
-            <div className="section">
-              <Home />
-            </div>
-          }
-        />
-        <Route
-          path="/inventaire"
-          element={
-            <div className="section">
-              <Inventory />
-            </div>
-          }
-        />
-        <Route
-          path="/inventaire/bordeaux"
-          element={
-            <div className="section">
-              <Bordeaux />
-            </div>
-          }
-        />
-        <Route
-          path="/inventaire/bourgogne"
-          element={
-            <div className="section">
-              <Bourgogne />
-            </div>
-          }
-        />
-        <Route
-          path="/inventaire/alsace"
-          element={
-            <div className="section">
-              <Alsace />
-            </div>
-          }
-        />
-        <Route
-          path="/inventaire/beaujolais"
-          element={
-            <div className="section">
-              <Beaujolais />
-            </div>
-          }
-        />
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/accueil" element={<Home />} />
+        <Route path="/inventaire" element={<Inventory />} />
+        <Route path="/bordeaux" element={<Bordeaux />} />
+        <Route path="//bourgogne" element={<Bourgogne />} />
+        <Route path="/alsace" element={<Alsace />} />
+        <Route path="/beaujolais" element={<Beaujolais />} />
       </Routes>
     </div>
   );
