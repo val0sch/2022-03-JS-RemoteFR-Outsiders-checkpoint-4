@@ -13,10 +13,16 @@ const router = express.Router();
 /**
  * @desc Bordeaux routes
  *
- * @api {get} /api/bordeaux Récupère tous les vins de Bordeaux
- * @api {get}
+ * @api {get} /api/bordeaux    Récupère tous les vins de Bordeaux
+ * @api {put} /api/bordeaux/addBottle/:id    Ajoute une bouteille au stock
+ * @api {delete} /api/bordeaux/deleteBottle/:id    Supprime une bouteille du stock
  */
 
-router.get("/api/bordeaux", BordeauxController.browse);
+router.get("/api/bordeaux/:appellation", BordeauxController.browse);
+router.put("/api/bordeaux/addBottle/:id", BordeauxController.updateAddBottle);
+router.delete(
+  "/api/bordeaux/deleteBottle/:id",
+  BordeauxController.updateDeleteBottle
+);
 
 module.exports = router;

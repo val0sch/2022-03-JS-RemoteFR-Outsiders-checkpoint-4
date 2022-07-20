@@ -4,11 +4,11 @@ class AbstractManager {
     this.table = table;
   }
 
-  find(id) {
-    return this.connection.query(`select * from  ${this.table} where id = ?`, [
-      id,
-    ]);
-  }
+  // find(id) {
+  //   return this.connection.query(`select * from  ${this.table} where id = ?`, [
+  //     id,
+  //   ]);
+  // }
 
   findAll() {
     return this.connection.query(`select * from  ${this.table}`);
@@ -18,6 +18,20 @@ class AbstractManager {
     return this.connection.query(`delete from ${this.table} where id = ?`, [
       id,
     ]);
+  }
+
+  addBottle(id) {
+    return this.connection.query(
+      `Update ${this.table} set stock = stock + 1 where id = ?`,
+      [id]
+    );
+  }
+
+  deleteBottle(id) {
+    return this.connection.query(
+      `Update ${this.table} set stock = stock - 1 where id = ?`,
+      [id]
+    );
   }
 }
 

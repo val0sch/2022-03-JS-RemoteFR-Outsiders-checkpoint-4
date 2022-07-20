@@ -18,3 +18,51 @@
 #bouchon {
   width: 5.5rem;
 }
+.cards-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5rem;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 22rem;
+}
+.photo-vin {
+  border-top-right-radius: var(--border-radius-card);
+  border-top-left-radius: var(--border-radius-card);
+}
+.card-text {
+  background-color: white;
+  padding: 1rem;
+  line-height: 1rem;
+}
+#card p {
+  margin: 0;
+}
+.domaine {
+  background-color: var(--color_1);
+
+  color: white;
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+}
+#buttons {
+  display: flex;
+  justify-content: space-around;
+  height: 3rem;
+}
+.deleteBottle {
+  width: 50%;
+  background-color: var(--color_delete);
+  border-bottom-left-radius: var(--border-radius-card);
+}
+.addBottle {
+  width: 50%;
+  background-color: var(--color_add);
+  border-bottom-right-radius: var(--border-radius-card);
+}

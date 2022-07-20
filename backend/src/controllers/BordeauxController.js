@@ -3,9 +3,37 @@ const models = require("../models");
 class BordeauxController {
   static browse = (req, res) => {
     models.bordeaux
-      .findAll()
+      .findAppellation(req.params.appellation)
       .then(([rows]) => {
-        res.send(rows);
+        if (rows == null) {
+          res.sendStatus(404);
+        } else {
+          res.send(rows);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static updateAddBottle = (req, res) => {
+    models.bordeaux
+      .addBottle(req.params.id)
+      .then(() => {
+        res.sendStatus(204);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static updateDeleteBottle = (req, res) => {
+    models.bordeaux
+      .deleteBottle(req.params.id)
+      .then(() => {
+        res.sendStatus(204);
       })
       .catch((err) => {
         console.error(err);
