@@ -1,0 +1,14 @@
+.section.welcome {
+  background-color: var(--color_1);
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+#welcoming-text {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 3rem;
+  text-align: center;
+}
