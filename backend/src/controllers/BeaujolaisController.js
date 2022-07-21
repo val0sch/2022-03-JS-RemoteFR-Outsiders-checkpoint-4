@@ -56,6 +56,32 @@ class BeaujolaisController {
         res.sendStatus(500);
       });
   };
+
+  static add = (req, res) => {
+    const wine = req.body;
+
+    models.beaujolais
+      .insert(wine)
+      .then(([result]) => {
+        res.status(201).send({ ...wine, id: result.insertId });
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static delete = (req, res) => {
+    models.beaujolais
+      .delete(req.params.id)
+      .then(() => {
+        res.sendStatus(204);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
 }
 
 module.exports = BeaujolaisController;

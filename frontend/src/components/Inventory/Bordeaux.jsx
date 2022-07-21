@@ -16,7 +16,7 @@ function Bordeaux() {
       .get(`/api/${region}`)
       .then((res) => setWineList(res.data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [isTrue]);
 
   useEffect(() => {
     api

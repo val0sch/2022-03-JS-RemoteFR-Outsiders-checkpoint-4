@@ -69,6 +69,7 @@
   height: 4rem;
   align-self: center;
   background-color: var(--color_1);
+  color: var(--color_light);
 }
 
 #buttons {
@@ -78,8 +79,7 @@
   height: 100%;
   width: 5rem;
 }
-
-.stock {
+.bloc {
   height: 4rem;
   background-color: rgb(27, 27, 27);
   color: var(--color_1);
@@ -87,12 +87,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.stock {
   border-top-right-radius: var(--border-radius-card);
 }
 .deleteBottle {
   height: 50%;
   background-color: var(--color_delete);
-  border-bottom-right-radius: var(--border-radius-card);
 }
 .addBottle {
   height: 50%;
@@ -101,8 +102,16 @@
 .commentaire {
   border-bottom-left-radius: var(--border-radius-card);
   background-color: rgb(225, 225, 225);
-  height: 2.33rem;
+  height: 4rem;
   display: flex;
   padding-top: 1rem;
   padding-left: 1rem;
+}
+.deleteCard {
+  height: 30%;
+  border-bottom-right-radius: var(--border-radius-card);
+  background-color: rgb(230, 32, 32);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

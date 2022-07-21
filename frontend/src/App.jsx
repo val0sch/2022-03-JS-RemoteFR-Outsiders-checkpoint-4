@@ -6,6 +6,7 @@ import Bourgogne from "@components/Inventory/Bourgogne";
 import Alsace from "@components/Inventory/Alsace";
 import Beaujolais from "@components/Inventory/Beaujolais";
 import Bordeaux from "@components/Inventory/Bordeaux";
+import Gestion from "@components/Gestion/Gestion";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="//bourgogne" element={<Bourgogne />} />
         <Route path="/alsace" element={<Alsace />} />
         <Route path="/beaujolais" element={<Beaujolais />} />
+        <Route path="/gestion" element={<Gestion />} />
       </Routes>
     </div>
   );

@@ -14,11 +14,6 @@ function NavBar() {
         <Link to="/inventaire" className="hover navbar">
           Mon inventaire
         </Link>
-
-        <Link to="/carte" className="hover navbar">
-          Carte de France
-        </Link>
-
         <Link to="/gestion" className="hover navbar">
           Gérer ma cave
         </Link>
