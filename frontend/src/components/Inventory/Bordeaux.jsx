@@ -4,28 +4,55 @@ import api from "@services/api";
 import Card from "./Card";
 
 function Bordeaux() {
+  const region = "bordeaux";
+
   const [wineList, setWineList] = useState([]);
   const [appellation, setAppellation] = useState("");
   const [isTrue, setIsTrue] = useState(true);
+  // const [inputText, setInputText] = useState();
 
   useEffect(() => {
     api
-      .get(`/api/bordeaux/${appellation}`, { withCredentials: true })
+      .get(`/api/${region}`)
+      .then((res) => setWineList(res.data))
+      .catch((err) => console.error(err));
+  }, []);
+
+  useEffect(() => {
+    api
+      .get(`/api/${region}/${appellation}`, { withCredentials: true })
       .then((res) => setWineList(res.data))
       .catch((err) => console.error(err));
   }, [appellation, isTrue]);
 
-  const handleChange = (e) => {
+  const handleChangeAppellation = (e) => {
     setAppellation(e.target.value);
   };
+
+  // const handleChangeInput = (e) => {
+  //   const search = e.target.value.toLowerCase();
+  //   setInputText(...search);
+  // };
+
   return (
     <Layout>
       <div className="section">
-        <div className="liste">
-          <label htmlFor="Select">
+        <div className="filtre">
+          <label htmlFor="search">
+            Rechercher
+            <input
+              placeholder="taper votre recherche"
+              // onChange={handleChangeInput}
+            />
+          </label>
+          <label htmlFor="appellation">
             Choisir une appellation
-            <select htmlFor="Select" name="appellation" onChange={handleChange}>
-              <option value="">---</option>
+            <select
+              htmlFor="Select"
+              name="appellation"
+              onChange={handleChangeAppellation}
+            >
+              <option value="">toutes</option>
               <option value="MARGAUX">Margaux</option>
               <option value="SAINT- EMILION">Saint-Emilion</option>
               <option value="HAUT-MEDOC">Haut-Médoc</option>
@@ -44,18 +71,27 @@ function Bordeaux() {
               <option value="CADILLAC">Cadillac</option>
             </select>
           </label>
-          <div className="cards-list">
-            {" "}
-            {wineList &&
-              wineList.map((item) => (
-                <Card
-                  item={item}
-                  appellation={appellation}
-                  isTrue={isTrue}
-                  setIsTrue={setIsTrue}
-                />
-              ))}
-          </div>
+          <label htmlFor="type">
+            Type
+            <select htmlFor="type" name="type">
+              <option value="rouge">rouge</option>
+              <option value="blanc">blanc</option>
+              <option value="liquoreux">liquoreux</option>
+              <option value="pétillant">pétillant</option>
+            </select>
+          </label>
+        </div>
+        <div className="cards-list">
+          {" "}
+          {wineList &&
+            wineList.map((item) => (
+              <Card
+                item={item}
+                isTrue={isTrue}
+                setIsTrue={setIsTrue}
+                region={region}
+              />
+            ))}
         </div>
       </div>
     </Layout>

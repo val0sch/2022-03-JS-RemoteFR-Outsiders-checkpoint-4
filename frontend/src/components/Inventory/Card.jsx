@@ -1,13 +1,15 @@
 import React from "react";
 import api from "@services/api";
+import { GrAddCircle } from "react-icons/gr";
+import { BiMinusCircle } from "react-icons/bi";
 import photovin from "../../assets/photo-vin.jpeg";
 
-function Card({ item, isTrue, setIsTrue }) {
+function Card({ item, isTrue, setIsTrue, region }) {
   const count = Math.round(item.prix_achat * item.stock * 10) / 10;
 
   const handleDeleteBottle = () => {
     api
-      .delete(`/api/bordeaux/deleteBottle/${item.id}`, item, {
+      .delete(`/api/${region}/deleteBottle/${item.id}`, item, {
         withCredentials: true,
       })
       .then(() => setIsTrue(!isTrue))
@@ -16,7 +18,7 @@ function Card({ item, isTrue, setIsTrue }) {
 
   const handleAddBottle = () => {
     api
-      .put(`/api/bordeaux/addBottle/${item.id}`, item, {
+      .put(`/api/${region}/addBottle/${item.id}`, item, {
         withCredentials: true,
       })
       .then(() => setIsTrue(!isTrue))
@@ -25,32 +27,41 @@ function Card({ item, isTrue, setIsTrue }) {
 
   return (
     <div className="card-container">
-      <img src={photovin} className="photo-vin" alt="vin" />
-
-      <h3 className="domaine">{item.Domaine}</h3>
       <div className="card-text">
-        <p>{item.classement}</p>
-        <p>{item.millésime} </p>
-        <p>Type : vin {item.type}</p>
+        <div className="domaine">
+          {" "}
+          <h3>
+            {item.Domaine} <br />
+            {item.millésime}
+          </h3>
+        </div>
+        {item.classement ? <p>Classement : {item.classement}</p> : ""}
+
+        {item.type ? <p>Type : vin {item.type}</p> : null}
+
         <p>Prix unitaire: {item.prix_achat} € </p>
         <p>Stock : {item.stock}</p>
         <p>Valeur totale : {count} € </p>
+        <div className="commentaire">Commentaire : {item.commentaire}</div>
       </div>
+      <img src={photovin} className="photo-vin" alt="vin" />
+
       <div id="buttons">
         <button
           type="button"
           className="button deleteBottle"
           onClick={handleDeleteBottle}
         >
-          Supprimer une bouteille
+          <BiMinusCircle size="2.5rem" />
         </button>
         <button
           type="button"
           className="button addBottle"
           onClick={handleAddBottle}
         >
-          Ajouter une bouteille
+          <GrAddCircle size="2.5rem" />
         </button>
+        <div className="stock">Stock</div>
       </div>
     </div>
   );

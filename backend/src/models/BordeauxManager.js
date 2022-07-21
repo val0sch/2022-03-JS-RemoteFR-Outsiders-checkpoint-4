@@ -16,12 +16,6 @@ class BordeauxManager extends AbstractManager {
   //     [item.title, item.id]
   //   );
   // }
-
-  findAppellation(appellation) {
-    return this.connection.query(
-      `SELECT * FROM ${this.table} WHERE Appellation LIKE '%${appellation}%'`
-    );
-  }
 }
 
 module.exports = BordeauxManager;

@@ -1,6 +1,22 @@
 const models = require("../models");
 
 class BordeauxController {
+  static getAll = (req, res) => {
+    models.bordeaux
+      .findAll()
+      .then(([rows]) => {
+        if (rows == null) {
+          res.sendStatus(404);
+        } else {
+          res.send(rows);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static browse = (req, res) => {
     models.bordeaux
       .findAppellation(req.params.appellation)
