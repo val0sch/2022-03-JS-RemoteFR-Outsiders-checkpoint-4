@@ -1,0 +1,14 @@
+#navbar {
+  background-color: var(--color_1);
+  padding: 1rem 3rem;
+  gap: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10vh;
+}
+#links-nav {
+  display: flex;
+  gap: 7rem;
+  align-items: center;
+}

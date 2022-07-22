@@ -1,0 +1,120 @@
+#links-region {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding: 4rem;
+  margin: auto 0;
+}
+.link-region {
+  text-decoration: none;
+  color: var(--color_dark);
+  font-size: var(--font-size-nav);
+}
+.link-region:hover {
+  transition: var(--transition);
+  color: var(--color_1);
+}
+
+#bouchon {
+  width: 5.5rem;
+}
+.filtre {
+  margin: 6rem;
+  color: var(--color_dark);
+  font-size: var(--font-size-h3);
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-around;
+}
+.filtre label {
+  display: flex;
+  gap: 1rem;
+}
+.cards-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5rem;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+/* ************************* */
+.card-container {
+  display: flex;
+  border-radius: var(--border-radius-card);
+}
+.photo-vin {
+  max-width: 20rem;
+}
+.photo-vin {
+  object-fit: cover;
+}
+
+.card-text {
+  width: 20rem;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: var(--border-radius-card);
+  border-bottom-left-radius: var(--border-radius-card);
+}
+.card-text p {
+  padding-left: 1rem;
+}
+
+.domaine h3 {
+  border-top-left-radius: var(--border-radius-card);
+  padding: 1rem;
+  height: 4rem;
+  align-self: center;
+  background-color: var(--color_1);
+  color: var(--color_light);
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  height: 100%;
+  width: 5rem;
+}
+.bloc {
+  height: 4rem;
+  background-color: rgb(27, 27, 27);
+  color: var(--color_1);
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stock {
+  border-top-right-radius: var(--border-radius-card);
+}
+.deleteBottle {
+  height: 50%;
+  background-color: var(--color_delete);
+}
+.addBottle {
+  height: 50%;
+  background-color: var(--color_add);
+}
+.commentaire {
+  border-bottom-left-radius: var(--border-radius-card);
+  background-color: rgb(225, 225, 225);
+  height: 4rem;
+  display: flex;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+.deleteCard {
+  height: 30%;
+  border-bottom-right-radius: var(--border-radius-card);
+  background-color: var(--color_deleteCard);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
