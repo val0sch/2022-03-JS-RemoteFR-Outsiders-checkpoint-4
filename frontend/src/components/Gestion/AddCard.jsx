@@ -1,6 +1,7 @@
 import api from "@services/api";
 import React, { useState } from "react";
 import "./gestion.css";
+import Swal from "sweetalert2";
 
 function AddCard() {
   const [card, setCard] = useState({
@@ -23,6 +24,13 @@ function AddCard() {
   };
 
   const onSubmit = (e) => {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Carte enregistrée !",
+      showConfirmButton: false,
+      timer: 1700,
+    });
     e.preventDefault();
     api
       .post(`/api/beaujolais/addCard`, card, { withCredentials: true })
@@ -47,14 +55,22 @@ function AddCard() {
             Prix d'achat :
             <input
               type="number"
-              step=".01"
+              min="0"
+              step="0.01"
               name="prix_achat"
+              required
               onChange={inputTextHandler}
             />
           </label>
           <label htmlFor="stock">
             Nombre de bouteilles en stock :
-            <input type="number" name="stock" onChange={inputTextHandler} />
+            <input
+              type="number"
+              name="stock"
+              min="0"
+              required
+              onChange={inputTextHandler}
+            />
           </label>
           <label htmlFor="type">
             Type :
@@ -75,7 +91,7 @@ function AddCard() {
           </label>
           <label htmlFor="millésime">
             Millésime :
-            <input type="number" name="millésime" onChange={inputTextHandler} />
+            <input type="text" name="millésime" onChange={inputTextHandler} />
           </label>
           <label htmlFor="lieu_achat">
             Lieu d'achat :

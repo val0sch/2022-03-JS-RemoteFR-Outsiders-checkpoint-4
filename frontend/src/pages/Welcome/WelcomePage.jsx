@@ -8,7 +8,7 @@ export default function WelcomePage() {
       <img src={logo} className="App-logo" alt="logo" />
       <div id="welcoming-text">
         <h2>Bienvenue !</h2>
-        <Link to="/accueil" className="hover">
+        <Link to="/inventaire" className="hover">
           Entrer sur le site
         </Link>
       </div>

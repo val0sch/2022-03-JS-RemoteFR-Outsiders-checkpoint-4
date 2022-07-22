@@ -6,7 +6,7 @@ import { BiMinusCircle } from "react-icons/bi";
 import photovin from "../../assets/photo-vin.jpeg";
 
 function Card({ item, isTrue, setIsTrue, region }) {
-  const count = Math.round(item.prix_achat * item.stock * 10) / 10;
+  const count = Math.round(parseFloat(item.prix_achat) * item.stock * 10) / 10;
 
   const handleDeleteBottle = () => {
     api

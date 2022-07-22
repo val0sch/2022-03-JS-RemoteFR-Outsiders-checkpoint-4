@@ -2,7 +2,6 @@
   margin: 0;
   padding: 1rem;
   text-align: center;
-  background: var(--color_3);
-  color: var(--color_light);
+  background: var(--color_4);
   height: 2vh;
 }

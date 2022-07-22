@@ -6,13 +6,15 @@
   gap: 5rem;
   padding: 4rem;
   margin: auto 0;
-
-  background-color: var(--color_3);
 }
 .link-region {
   text-decoration: none;
-  color: var(--color_light);
+  color: var(--color_dark);
   font-size: var(--font-size-nav);
+}
+.link-region:hover {
+  transition: var(--transition);
+  color: var(--color_1);
 }
 
 #bouchon {
@@ -20,7 +22,7 @@
 }
 .filtre {
   margin: 6rem;
-  color: white;
+  color: var(--color_dark);
   font-size: var(--font-size-h3);
   display: flex;
   flex-direction: row;
@@ -43,6 +45,7 @@
 /* ************************* */
 .card-container {
   display: flex;
+  border-radius: var(--border-radius-card);
 }
 .photo-vin {
   max-width: 20rem;
@@ -110,7 +113,7 @@
 .deleteCard {
   height: 30%;
   border-bottom-right-radius: var(--border-radius-card);
-  background-color: rgb(230, 32, 32);
+  background-color: var(--color_deleteCard);
   display: flex;
   justify-content: center;
   align-items: center;

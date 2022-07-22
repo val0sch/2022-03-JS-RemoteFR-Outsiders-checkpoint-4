@@ -2,7 +2,7 @@ import "./inventory.css";
 import { Link } from "react-router-dom";
 import React from "react";
 import Layout from "@components/Layout";
-import bouchon from "../../assets/bouchon-liege-gris2.png";
+import bouchon from "../../assets/bouchon-liege-noir.png";
 
 function Inventory() {
   return (

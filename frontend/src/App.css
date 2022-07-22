@@ -1,9 +1,11 @@
 :root {
   --color_1: #bc4749;
   --color_2: #4a4949;
-  --color_3: #3d3d3d;
-  --color_delete: rgb(232, 96, 96);
-  --color_add: #a3f2aa;
+  --color_3: #6d5f5f;
+  --color_4: rgb(224, 203, 203);
+  --color_delete: #b9b8b7;
+  --color_add: #dfdfdf;
+  --color_deleteCard: #e84c41;
   --color_dark: #000000;
   --color_light: #ffffff;
   --font-size-h1: 3.5rem;
@@ -62,7 +64,7 @@ code {
   min-height: 90vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--color_3);
+  background-color: var(--color_4);
 }
 
 @keyframes App-logo-spin {
@@ -76,11 +78,12 @@ code {
 
 .hover {
   text-decoration: none;
-  color: white;
+  color: var(--color_light);
+  font-weight: 800;
   font-size: var(--font-size-nav);
   padding: 0.8rem;
   border-radius: var(--border-radius);
-  background: linear-gradient(var(--color_3) 0 0) no-repeat
+  background: linear-gradient(var(--color_4) 0 0) no-repeat
     calc(200% - var(--i, 0) * 100%) 100% / 200%
     calc(100% * var(--i, 0) + 0.08em);
   transition: 0.3s calc(var(--i, 0) * 0.2s),
@@ -88,4 +91,5 @@ code {
 }
 .hover:hover {
   --i: 1;
+  color: var(--color_dark);
 }
